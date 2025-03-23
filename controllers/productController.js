@@ -31,7 +31,7 @@ exports.createProduct = async (req, res) => {
 
     res.status(201).json({ message: "Product Created Successfully", data: product });
   } catch (error) {
-    // console.error(error.message);
+    console.error(error);
     res.status(500).json({ message: "Internal Server Error: ", error: error.message });
   }
 };
