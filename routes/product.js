@@ -72,7 +72,8 @@ const router = require('express').Router();
  *                           description: The public ID of the image on Cloudinary
  *                           example: "laptop_public_id"
  *         description: Product Created Successfully
- *
+ *       500:
+ *         description: Internal Server Error
  * /api/v1/product/{productId}:
  *   get:
  *     summary: Get a single product by its ID
@@ -90,7 +91,6 @@ const router = require('express').Router();
  *         description: Product not found
  *       500:
  *         description: Internal Server Error
- *
  * /api/v1/products:
  *   get:
  *     summary: Get all products
@@ -99,7 +99,6 @@ const router = require('express').Router();
  *         description: List of all products in the database
  *       500:
  *         description: Internal Server Error
- *
  * /api/v1/update/{productId}:
  *   put:
  *     summary: Update a product by its ID
@@ -140,7 +139,6 @@ const router = require('express').Router();
  *         description: Product Not Found
  *       500:
  *         description: Internal Server Error
- *
  * /api/v1/delete/{productId}:
  *   delete:
  *     summary: Delete a product by its ID
