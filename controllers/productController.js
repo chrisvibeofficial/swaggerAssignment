@@ -11,7 +11,7 @@ exports.createProduct = async (req, res) => {
 
     if (file && file.path) {
       const result = await cloudinary.uploader.upload(file.path);
-      fs.unlinkSync(file.path);
+      // fs.unlinkSync(file.path);
 
       image = {
         imageUrl: result.secure_url,
