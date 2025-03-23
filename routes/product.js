@@ -72,8 +72,6 @@ const router = require('express').Router();
  *                           description: The public ID of the image on Cloudinary
  *                           example: "laptop_public_id"
  *         description: Product Created Successfully
- *       500:
- *         description: Internal Server Error
  *
  * /api/v1/product/{productId}:
  *   get:
