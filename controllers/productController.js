@@ -9,7 +9,10 @@ exports.createProduct = async (req, res) => {
 
     let image = {};
 
-    if (file) {
+    if (file && file.path) {
+      console.log('file path: ',file.path);
+      console.log('file: ',file);
+      
       const result = await cloudinary.uploader.upload(file.path);
       fs.unlinkSync(file.path);
 
