@@ -21,11 +21,11 @@ const router = require('express').Router();
  *               productName:
  *                 type: string
  *                 description: The name of the product
- *                 example: "Laptop"
+ *                 example: Laptop
  *               description:
  *                 type: string
  *                 description: A brief description of the product
- *                 example: "High-performance laptop with 16GB RAM"
+ *                 example: High-performance laptop with 16GB RAM
  *               productPrice:
  *                 type: number
  *                 description: The price of the product
