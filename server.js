@@ -14,23 +14,34 @@ app.use('/api/v1', userRouter);
 app.use('/api/v1', productRouter);
 
 
-const swaggerJsdoc = require('swagger-jsdoc');
-const swagger_ui = require('swagger-ui-express');
+const swaggerJsdoc = require("swagger-jsdoc");
+const swagger_UI = require("swagger-ui-express")
 
 const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'ASSIGNMENT',
+      title: 'BASE_URL: https://swaggerassignment.onrender.com',
       version: '1.0.0',
     },
+    components: {
+      securitySchemes: {
+        BearerAuth: {
+          type: "http",
+          scheme: "bearer",
+           bearerFormat: "JWT"
+        }
+      }
+    }, 
+    security: [{ BearerAuth: [] }]
   },
-  apis: ['./routes/*.js'], // files containing annotations as above
+  apis: ["./routes/*.js"] // Ensure this points to the correct path
 };
 
-const openapiSpecification = swaggerJsdoc(options);
 
-app.use('/documentation', swagger_ui.serve, swagger_ui.setup(openapiSpecification));
+const openapiSpecification = swaggerJsdoc(options);
+app.use("/documentation", swagger_UI.serve, swagger_UI.setup(openapiSpecification))
+
 
 
 
